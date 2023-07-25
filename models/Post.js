@@ -21,8 +21,8 @@ Post.init(
         len: [1],
       },
     },
-    date_created: {
-      type: DataTypes.DATEONLY,
+    created_at: {
+      type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
