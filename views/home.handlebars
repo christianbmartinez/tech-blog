@@ -11,18 +11,18 @@
       class='mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3'
     >
       {{#each allPosts}}
-        <article class='p-6 bg-white rounded-lg shadow-2xl'>
+        <article class='p-6 bg-white rounded-lg shadow-2xl cursor-default'>
           <div class='flex justify-between items-center text-xs'>
             <p>Posted on {{this.created_on}}</p>
             <p
-              class='relative z-10 rounded-full bg-[#ff551c] px-3 py-1.5 font-medium right-0 text-white'
-            >Blog</a>
+              class='relative z-10 rounded-full bg-[#ff551c] hover:bg-[#ce4920] px-3 py-1.5 font-medium right-0 text-white'
+            >Blog</p>
           </div>
           <div class='group relative'>
             <h3
               class='mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600'
-            >   
-                {{this.title}}         
+            >
+              {{this.title}}
             </h3>
             <p
               class='mt-5 text-sm leading-6 text-gray-600'
@@ -37,8 +37,8 @@
             </div>
             <div class='text-sm leading-6'>
               <p class='font-normal text-gray-900'>
-                <a href='#' class="cursor-pointer hover:underline">
-                    Read more
+                <a href='#' class='cursor-pointer hover:underline'>
+                  Read more
                 </a>
               </p>
             </div>
