@@ -12,11 +12,8 @@
     >
       {{#each posts}}
         <article class='p-6 bg-white rounded-lg shadow-2xl cursor-default'>
-          <div class='flex justify-between items-center text-xs'>
-            <p>Created on {{this.created_on}}</p>
-            <p
-              class='relative z-10 rounded-full bg-[#ff551c] hover:bg-[#ce4920] px-3 py-1.5 font-medium right-0 text-white'
-            >Blog</p>
+          <div class='flex justify-start items-center text-xs'>
+            <p>Posted on {{this.created_on}}</p>
           </div>
           <div class='group relative'>
             <h3
@@ -28,20 +25,10 @@
               class='mt-5 text-sm leading-6 text-gray-600'
             >{{this.post_text}}</p>
           </div>
-          <div class='flex mt-8 justify-between items-center text-xs'>
-            <div class='text-sm leading-6'>
-              <p class='font-semibold text-gray-900'>
-                -
-                {{this.user.full_name}}
-              </p>
-            </div>
-            <div class='text-sm leading-6'>
-              <p class='font-normal text-gray-900'>
-                <a href='/dashboard/edit/{{post.id}}' class='cursor-pointer hover:underline'>
-                  Edit
-                </a>
-              </p>
-            </div>
+          <div class='flex mt-8 justify-center items-center text-xs'>
+            <a href='/dashboard/edit/{{this.id}}' 
+            class='flex w-full justify-center rounded-md bg-[#ff551c] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#ce4920] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
+            >Edit Post</a>
           </div>
         </article>
         {{/each}}
