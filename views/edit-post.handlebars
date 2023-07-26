@@ -1,0 +1,58 @@
+<div class='bg-white pt-5 pb-12 sm:pb-32'>
+  <div class='mx-auto max-w-7xl px-6 lg:px-8'>
+    <div class='mx-auto max-w-2xl lg:mx-0'>
+      <h2
+        class='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'
+      >Dashboard</h2>
+      <p class='mt-4 text-lg leading-8 text-gray-600'>Edit Post</p>
+    </div>
+        <div
+      class='mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-1'
+    >
+ <div class='mt-10 sm:mx-auto sm:w-full sm:max-w-sm'>
+      <form class='space-y-6' action='/api/posts/{{post.id}}' method='PUT'>
+        <div>
+          <label
+            for='title'
+            class='block text-sm font-medium leading-6 text-gray-900'
+          >Title</label>
+          <div class='mt-2'>
+            <input
+              id='title'
+              name='title'
+              type='title'
+              autocomplete='off'
+              value='{{post.title}}' 
+              class='block w-full rounded-md border-0 py-2 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:outline-none focus:ring-inset focus:ring-[#ff551c] sm:text-sm sm:leading-6'
+            />
+          </div>
+        </div>
+
+        <div>
+          <div class='flex items-center justify-between'>
+            <label
+              for='post_text'
+              class='block text-sm font-medium leading-6 text-gray-900'
+            >Text</label>
+          </div>
+          <div class='mt-2'>
+            <textarea
+              id='post_text'
+              name='post_text'
+              type='text'
+              class='block w-full rounded-md border-0 py-2 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:outline-none focus:ring-inset focus:ring-[#ff551c] sm:text-sm sm:leading-6'
+            >{{post.post_text}}</textarea>
+          </div>
+        </div>
+
+        <div>
+          <button
+            type='submit'
+            class='flex w-full justify-center rounded-md bg-[#ff551c] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#ce4920] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
+          >Update</button>
+        </div>
+      </form>
+
+    </div>
+    </div>
+    </div>
