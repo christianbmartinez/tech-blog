@@ -1,11 +1,105 @@
 {{#if posts.length}}
-  <section>
-    <h2>Your Posts</h2>
-    {{#each posts}}
-      {{posts}}
-      <a href='/dashboard/edit/{{post.id}}' class='edit-link'>Edit post</a>
-    {{/each}}
-  </section>
+  <div class='bg-white pt-5 pb-12 sm:pb-32'>
+  <div class='mx-auto max-w-7xl px-6 lg:px-8'>
+    <div class='mx-auto max-w-2xl lg:mx-0'>
+      <h2
+        class='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'
+      >Dashboard</h2>
+      <p class='mt-4 text-lg leading-8 text-gray-600'>Manage your posts</p>
+    </div>
+    <div
+      class='mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3'
+    >
+      {{#each posts}}
+        <article class='p-6 bg-white rounded-lg shadow-2xl cursor-default'>
+          <div class='flex justify-between items-center text-xs'>
+            <p>Created on {{this.created_on}}</p>
+            <p
+              class='relative z-10 rounded-full bg-[#ff551c] hover:bg-[#ce4920] px-3 py-1.5 font-medium right-0 text-white'
+            >Blog</p>
+          </div>
+          <div class='group relative'>
+            <h3
+              class='mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600'
+            >
+              {{this.title}}
+            </h3>
+            <p
+              class='mt-5 text-sm leading-6 text-gray-600'
+            >{{this.post_text}}</p>
+          </div>
+          <div class='flex mt-8 justify-between items-center text-xs'>
+            <div class='text-sm leading-6'>
+              <p class='font-semibold text-gray-900'>
+                -
+                {{this.user.full_name}}
+              </p>
+            </div>
+            <div class='text-sm leading-6'>
+              <p class='font-normal text-gray-900'>
+                <a href='/dashboard/edit/{{post.id}}' class='cursor-pointer hover:underline'>
+                  Edit
+                </a>
+              </p>
+            </div>
+          </div>
+        </article>
+        {{/each}}
+        </div>
+        </div>
+        </div>        
+         <div class='flex flex-col px-6 pb-24 lg:px-8'>
+    <div class='sm:mx-auto sm:w-full sm:max-w-sm'>
+      <h2
+        class='mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900'
+      >Create Post</h2>
+    </div>
+
+    <div class='mt-10 sm:mx-auto sm:w-full sm:max-w-sm'>
+      <form class='space-y-6' action='/api/posts' method='POST'>
+        <div>
+          <label
+            for='title'
+            class='block text-sm font-medium leading-6 text-gray-900'
+          >Title</label>
+          <div class='mt-2'>
+            <input
+              id='title'
+              name='title'
+              type='title'
+              autocomplete='off'
+              required
+              class='block w-full rounded-md border-0 py-2 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:outline-none focus:ring-inset focus:ring-[#ff551c] sm:text-sm sm:leading-6'
+            />
+          </div>
+        </div>
+
+        <div>
+          <div class='flex items-center justify-between'>
+            <label
+              for='post_text'
+              class='block text-sm font-medium leading-6 text-gray-900'
+            >Text</label>
+          </div>
+          <div class='mt-2'>
+            <textarea
+              id='post_text'
+              name='post_text'
+              type='text'
+              required
+              class='block w-full rounded-md border-0 py-2 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:outline-none focus:ring-inset focus:ring-[#ff551c] sm:text-sm sm:leading-6'
+            ></textarea>
+          </div>
+        </div>
+
+        <div>
+          <button
+            type='submit'
+            class='flex w-full justify-center rounded-md bg-[#ff551c] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#ce4920] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
+          >Submit</button>
+        </div>
+      </form>
+  </div>
 {{else}}
   <div class='flex h-[85vh] flex-col justify-center px-6 py-12 lg:px-8'>
     <div class='sm:mx-auto sm:w-full sm:max-w-sm'>
