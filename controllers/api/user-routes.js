@@ -4,13 +4,13 @@ const { User } = require('../../models')
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body)
-
     req.session.save(() => {
       req.session.user_id = userData.id
       req.session.logged_in = true
       res.redirect('/login')
     })
   } catch (err) {
+    console.log(err)
     res.status(400).json(err)
   }
 })
@@ -20,7 +20,7 @@ router.post('/login', async (req, res) => {
     const userData = await User.findOne({ where: { email: req.body.email } })
 
     if (!userData) {
-      res.status(400).json({ message: 'Incorrect email or password' })
+      res.status(404).json({ message: 'No user found' })
       return
     }
 
@@ -39,7 +39,8 @@ router.post('/login', async (req, res) => {
       res.render('dashboard', { userData, logged_in: req.session.logged_in })
     })
   } catch (err) {
-    res.status(400).json(err)
+    console.log(err)
+    res.status(500).json(err)
   }
 })
 

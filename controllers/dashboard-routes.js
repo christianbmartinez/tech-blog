@@ -30,16 +30,12 @@ router.get('/', async (req, res) => {
       ],
     })
 
-    if (!allPosts) {
-      res.status(404).json({ message: 'No posts found!' })
-      return
-    }
-
     const posts = allPosts.map((post) => post.get({ plain: true }))
+
     res.render('dashboard', { posts, logged_in: req.session.logged_in })
   } catch (err) {
-    res.status(400).json(err)
+    console.log(err)
+    res.status(500).json(err)
   }
 })
-
 module.exports = router
