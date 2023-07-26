@@ -1,1 +1,63 @@
-<p>This is the dashboard page</p>
+{{#if posts.length}}
+  <section>
+    <h2>Your Posts</h2>
+    {{#each posts}}
+      {{posts}}
+      <a href='/dashboard/edit/{{post.id}}' class='edit-link'>Edit post</a>
+    {{/each}}
+  </section>
+{{else}}
+  <div class='flex h-[85vh] flex-col justify-center px-6 py-12 lg:px-8'>
+    <div class='sm:mx-auto sm:w-full sm:max-w-sm'>
+      <h2
+        class='mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900'
+      >Create Post</h2>
+    </div>
+
+    <div class='mt-10 sm:mx-auto sm:w-full sm:max-w-sm'>
+      <form class='space-y-6' action='/api/posts' method='POST'>
+        <div>
+          <label
+            for='title'
+            class='block text-sm font-medium leading-6 text-gray-900'
+          >Title</label>
+          <div class='mt-2'>
+            <input
+              id='title'
+              name='title'
+              type='title'
+              autocomplete='off'
+              required
+              class='block w-full rounded-md border-0 py-2 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:outline-none focus:ring-inset focus:ring-[#ff551c] sm:text-sm sm:leading-6'
+            />
+          </div>
+        </div>
+
+        <div>
+          <div class='flex items-center justify-between'>
+            <label
+              for='post_text'
+              class='block text-sm font-medium leading-6 text-gray-900'
+            >Text</label>
+          </div>
+          <div class='mt-2'>
+            <textarea
+              id='post_text'
+              name='post_text'
+              type='text'
+              required
+              class='block w-full rounded-md border-0 py-2 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:outline-none focus:ring-inset focus:ring-[#ff551c] sm:text-sm sm:leading-6'
+            ></textarea>
+          </div>
+        </div>
+
+        <div>
+          <button
+            type='submit'
+            class='flex w-full justify-center rounded-md bg-[#ff551c] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#ce4920] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
+          >Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+{{/if}}
