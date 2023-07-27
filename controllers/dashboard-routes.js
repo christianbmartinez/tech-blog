@@ -2,6 +2,7 @@ const router = require('express').Router()
 const { Comment, Post, User } = require('../models')
 
 router.get('/', async (req, res) => {
+  console.log(req.session)
   try {
     const allPosts = await Post.findAll({
       where: {
