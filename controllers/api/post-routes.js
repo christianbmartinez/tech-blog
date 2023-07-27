@@ -42,7 +42,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
   try {
-    const posts = await Post.findOne({
+    const post = await Post.findOne({
       where: {
         id: req.params.id,
       },
@@ -69,12 +69,12 @@ router.get('/:id', async (req, res) => {
       ],
     })
 
-    if (!posts) {
-      res.status(404).json({ message: 'No posts found with this id' })
+    if (!post) {
+      res.status(404).json({ message: 'No post found with this id' })
       return
     }
 
-    res.redirect('/dashboard')
+    res.render('view-post', { post, logged_in: req.session.logged_in })
   } catch (err) {
     console.log(err)
     res.status(500).json(err)
