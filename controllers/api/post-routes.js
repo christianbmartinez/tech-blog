@@ -78,6 +78,8 @@ router.get('/:id', async (req, res) => {
 
     const comments = JSON.parse(allComments)
 
+    console.log('COMMENTS: ', comments)
+
     if (req.session.logged_in) {
       res.render('view-post', {
         post,

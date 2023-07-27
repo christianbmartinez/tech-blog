@@ -41,7 +41,6 @@
         class='mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900'
       >Create New Post</h2>
     </div>
-
     <div class='mt-10 sm:mx-auto sm:w-full sm:max-w-sm'>
       <form class='space-y-6' action='/api/posts' method='POST'>
         <div>
@@ -88,13 +87,20 @@
       </form>
   </div>
 {{else}}
-  <div class='flex h-[85vh] flex-col justify-center px-6 py-12 lg:px-8'>
-    <div class='sm:mx-auto sm:w-full sm:max-w-sm'>
+  <div class='bg-white pt-5 pb-12 sm:pb-32'>
+  <div class='mx-auto max-w-7xl px-6 lg:px-8'>
+    <div class='mx-auto max-w-2xl lg:mx-0'>
       <h2
-        class='mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900'
-      >Create Post</h2>
+        class='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'
+      >Dashboard</h2>
+      <p class='mt-4 text-lg leading-8 text-gray-600'>Manage your posts</p>
     </div>
-
+    <div
+      class='mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-1'
+    >
+<h2
+        class='mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900'
+      >Create New Post</h2>
     <div class='mt-10 sm:mx-auto sm:w-full sm:max-w-sm'>
       <form class='space-y-6' action='/api/posts' method='POST'>
         <div>
@@ -140,5 +146,8 @@
         </div>
       </form>
     </div>
+  </div>
+  </div>
+  </div>
   </div>
 {{/if}}
