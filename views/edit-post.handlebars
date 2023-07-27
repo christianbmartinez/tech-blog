@@ -52,7 +52,15 @@
           >Update</button>
         </div>
       </form>
+    </div>
 
-    </div>
-    </div>
-    </div>
+    {{#if post.comment.length}}
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Comments</h2>
+          <div class='p-6 border-t border-gray-200'>
+        {{#each post}}
+            <p>{{this.full_name}} said "{{this.comment_text}}" on {{this.created_at}}</p>
+        {{/each}}
+        </div>
+    {{/if}}
+  </div>
+</div>
