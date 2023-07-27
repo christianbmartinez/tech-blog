@@ -1,1 +1,28 @@
-<p>This is the view posts page for a particular post</p>
+<div class='bg-white pt-5 pb-24 sm:pb-32'>
+  <div class='mx-auto max-w-7xl px-6 lg:px-8'>
+    <div class='mx-auto max-w-2xl lg:mx-0'>
+      <h2
+        class='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'
+      >{{post.dataValues.title}}</h2>
+      <p
+        class='mt-4 text-lg leading-8 text-gray-600'
+      >{{post.dataValues.post_text}}</p>
+      <p class='mt-4 text-md leading-8 text-gray-600'>Posted on
+        {{post.dataValues.created_on}}</p>
+
+    </div>
+    {{#if comments}}
+      <div
+        class='mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-1'
+      >
+        <h2
+          class='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'
+        >Comments</h2>
+        <div class='p-6'>
+          "{{comments.comment_text}}""
+          <p class='font-bold'>- {{comments.user.full_name}}</p>
+        </div>
+      </div>
+    {{/if}}
+  </div>
+</div>

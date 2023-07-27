@@ -74,7 +74,19 @@ router.get('/:id', async (req, res) => {
       return
     }
 
-    res.render('view-post', { post, logged_in: req.session.logged_in })
+    const allComments = post.comments.map((data) => JSON.stringify(data))
+
+    const comments = JSON.parse(allComments)
+
+    if (req.session.logged_in) {
+      res.render('view-post', {
+        post,
+        comments,
+        logged_in: req.session.logged_in,
+      })
+    } else {
+      res.redirect('/login')
+    }
   } catch (err) {
     console.log(err)
     res.status(500).json(err)
