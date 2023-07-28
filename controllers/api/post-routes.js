@@ -133,6 +133,7 @@ router.delete('/:id', async (req, res) => {
         id: req.params.id,
       },
     })
+    res.redirect('/dashboard')
   } catch (err) {
     console.log(err)
     res.status(500).json(err)
