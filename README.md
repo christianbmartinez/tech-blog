@@ -103,7 +103,7 @@ npm start
 
 You can view the app locally at http://localhost:3001/
 
-Or view the app [live](https://www.example.com)
+Or view the app [live](https://guarded-ocean-61686-3600ffdf6cf0.herokuapp.com/)
 
 # License
 
