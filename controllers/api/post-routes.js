@@ -74,16 +74,14 @@ router.get('/:id', async (req, res) => {
       return
     }
 
-    const allComments = post.comments.map((data) => JSON.stringify(data))
+    const allComments = post.comments.map((data) => data.dataValues)
 
-    const comments = JSON.parse(allComments)
-
-    console.log('COMMENTS: ', comments)
+    console.log('COMMENTS: ', allComments)
 
     if (req.session.logged_in) {
       res.render('view-post', {
         post,
-        comments,
+        allComments,
         logged_in: req.session.logged_in,
       })
     } else {

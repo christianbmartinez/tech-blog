@@ -8,7 +8,7 @@ router.post('/:id', async (req, res) => {
       post_id: req.params.id,
       user_id: req.session.user_id,
     })
-    res.redirect('/')
+    res.redirect(`/api/posts/${req.params.id}`)
   } catch (err) {
     console.log(err)
     res.status(500).json(err)
