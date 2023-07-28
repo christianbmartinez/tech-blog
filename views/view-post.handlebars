@@ -25,7 +25,10 @@
         {{#each allComments}}
           <div class='p-6'>
             "{{this.comment_text}}"
-            <p class='font-bold'>- {{this.user.dataValues.full_name}}</p>
+            <p class='font-bold'>-
+              {{this.user.dataValues.full_name}}
+              on
+              {{this.created_on}}</p>
           </div>
         {{/each}}
       </div>
