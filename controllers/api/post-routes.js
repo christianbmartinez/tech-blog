@@ -128,18 +128,11 @@ router.post('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   try {
-    const posts = await Post.destroy(req.body, {
+    Post.destroy({
       where: {
         id: req.params.id,
       },
     })
-
-    if (!posts) {
-      res.status(404).json({ message: 'No post found to delete' })
-      return
-    }
-
-    res.redirect('/dashboard')
   } catch (err) {
     console.log(err)
     res.status(500).json(err)

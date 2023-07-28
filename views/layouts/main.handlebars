@@ -4,6 +4,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <script src='https://cdn.tailwindcss.com'></script>
     <title>Tech Blog</title>
+    <script src='/js/index.js'></script>
   </head>
   <body>
     <header class='bg-white h-[15vh]'>
@@ -34,7 +35,7 @@
         <div class='flex lg:flex-1 lg:justify-end'>
           {{#if logged_in}}
             <a
-              id='logout'
+              onclick='logout()'
               class='text-sm cursor-pointer font-semibold leading-6 text-gray-900 cursor-pointer'
             >Log out
               <span aria-hidden='true'>&rarr;</span></a>
@@ -50,5 +51,4 @@
     </header>
     {{{body}}}
   </body>
-  <script src='/js/index.js'></script>
 </html>
