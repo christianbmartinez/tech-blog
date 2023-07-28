@@ -11,8 +11,9 @@
         class='mt-4 text-lg leading-8 text-gray-600'
       >{{post.dataValues.post_text}}</p>
       <p class='mt-4 text-md leading-8 text-gray-600'>Posted on
-        {{post.dataValues.created_on}}</p>
-
+        {{post.dataValues.created_on}}
+        by
+        {{post.user.dataValues.full_name}}</p>
     </div>
     {{#if allComments.length}}
       <div

@@ -76,8 +76,6 @@ router.get('/:id', async (req, res) => {
 
     const allComments = post.comments.map((data) => data.dataValues)
 
-    console.log('COMMENTS: ', allComments)
-
     if (req.session.logged_in) {
       res.render('view-post', {
         post,
