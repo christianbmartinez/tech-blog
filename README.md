@@ -72,7 +72,7 @@ npm install
 Next, create a .env file in the root directory and insert your db config:
 
 ```
-DB_NAME='ecommerce_db'
+DB_NAME='blog_db'
 DB_USER='root'
 DB_PASSWORD='Your Password'
 ```
@@ -115,4 +115,4 @@ Contributing is welcomed! Please submit a pull request.
 
 # Questions
 
-Feel free to [email](mailto:hello@christianbmartinez.com?subject=[GitHub]%20Ecommerce%20Backend) me with any questions or view [my github profile](https://github.com/christianbmartinez) to check out my other repos!
+Feel free to [email](mailto:hello@christianbmartinez.com?subject=[GitHub]%20Tech%20Blog) me with any questions or view [my github profile](https://github.com/christianbmartinez) to check out my other repos!
