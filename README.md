@@ -3,7 +3,7 @@
 
 # Tech Blog
 
-A full stack tech blog built with MVC architecture using node, sequelize, mysql2, express, and handlebars.
+A full stack tech blog built with MVC architecture using node, tailwindcss, mysql2, sequelize, express-handlebars, express-session, connect-session-sequelize, and bcrypt
 
 ### Table of Contents
 
