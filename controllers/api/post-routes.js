@@ -80,7 +80,7 @@ router.get('/:id', async (req, res) => {
       res.render('view-post', {
         post,
         allComments,
-        logged_in: req.session.logged_in,
+        logged_in: true,
       })
     } else {
       res.redirect('/login')
