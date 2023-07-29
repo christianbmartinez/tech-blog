@@ -2,7 +2,7 @@ const router = require('express').Router()
 const { Comment, Post, User } = require('../models')
 
 router.get('/', async (req, res) => {
-  if (req.session.logged_in && req.session.user_id) {
+  if (req.session.logged_in || req.session.user_id) {
     try {
       const allPosts = await Post.findAll({
         where: {
