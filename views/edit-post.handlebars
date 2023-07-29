@@ -59,14 +59,23 @@
         Delete
       </a>
     </div>
-
     {{#if post.comments.length}}
-        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Comments</h2>
-          <div class='p-6 border-t border-gray-200'>
+      <div
+        class='mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-1'
+      >
+        <h2
+          class='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'
+        >Comments</h2>
         {{#each post.comments}}
-            <p>{{this.user.full_name}} said "{{this.comment_text}}" on {{this.created_on}}</p>
+          <div class='p-6'>
+            "{{this.comment_text}}"
+            <p class='font-bold'>-
+              {{this.user.full_name}}
+              on
+              {{this.created_on}}</p>
+          </div>
         {{/each}}
-        </div>
+      </div>
     {{/if}}
   </div>
 </div>
