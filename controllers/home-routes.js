@@ -40,7 +40,7 @@ router.get('/', async (req, res) => {
   }
 })
 
-router.get('/', async (req, res) => {
+router.get('/dashboard', async (req, res) => {
   if (req.session.logged_in || req.session.user_id) {
     try {
       const allPosts = await Post.findAll({
